@@ -40,7 +40,7 @@ We utilized the folder data connector to import our data into Power BI. The data
 
 Snap of files comination for Inpatient data
 
-![Snapshot of file combination](https://github.com/user-attachments/assets/9a2001dd-d11c-45fd-af05-bf5909e095c5)
+![Snapshot of file combination](https://github.com/user-attachments/assets/fd4c4eb6-3a43-4825-9d65-00235cc4c7eb)
 
 
 ### Data Transformation and Modeling
@@ -65,7 +65,7 @@ d. Use the following M query formula to format the new column correctly (custom 
 
 Snap of corrected Archive_Date datatype
 
-![Archive Date New](https://github.com/user-attachments/assets/a6ee92a6-4265-4021-91f9-94c364c69955)
+![Archive Date New](https://github.com/user-attachments/assets/0f1d7442-82ea-4555-ace3-b3565d84f6b1)
 
 
 - In the outpatient data, three transformations were applied:
@@ -78,7 +78,7 @@ c. Since the outpatient data does not have a Case_Type column, a new custom colu
 
 Snap of renamed "Speciality" column to "Specialty_Name" and added "Case_type" column
 
-![Specialty and case type](https://github.com/user-attachments/assets/fc6db2c8-b05d-4ac6-a835-c6e997c2ce81)
+![Specialty and case type](https://github.com/user-attachments/assets/5890ea3e-5b9c-4764-815f-c717c6c4b207)
 
 
 - The "Inpatient" and "Outpatient" datasets were then merged by using the Append as New Query option, and renamed to All_Data
@@ -87,14 +87,14 @@ Snap of renamed "Speciality" column to "Specialty_Name" and added "Case_type" co
 
 Snap of manually created mapping table
 
-![Mapping table](https://github.com/user-attachments/assets/cf89182e-e13e-43d7-b8e4-cca02eb8eb57)
+![Mapping table](https://github.com/user-attachments/assets/cb455515-c6d2-48ad-abf4-a84dc7ad408b)
 
 
 - For the Modeling, a one-to-many (1:M) relationship was created between the Specialty_Name in the main data table and the Specialty in the mapping table. 
 
 Snap of the Modeling view
 
-![Modeling](https://github.com/user-attachments/assets/79c1bfa8-1d23-4eff-80d4-5d781d184ae7)
+![Modeling](https://github.com/user-attachments/assets/b985d60a-1e8b-46bf-b2cc-c90624aded87)
 
 
 ### Data Visualization
@@ -111,14 +111,13 @@ The following DAX expressions was written for the same
 
 Two card visuals were added to the report view to represent the Latest Month Wait List and same month Previous Year Wait List
 
-![PY](https://github.com/user-attachments/assets/5615fd31-1d0e-410d-83dd-390361ce4bed)
-
+![PY](https://github.com/user-attachments/assets/9d9541c1-70b2-4e5e-8b71-c23dab2ef9fb)
 
 - Step 2: We created a dummy table (Calc Method) with values 'Average' and 'Median' to enable dynamic switching between these metrics, allowing us to effectively address outliers in the waitlist data.
 
 - Step 3: Visual filter (Slicers) was added to the report view for the "Average" and "Median" to serves as a toggle / selector for the user to switch between the two metrics.
 
-![Avgmed](https://github.com/user-attachments/assets/33619315-96f7-40cf-97b2-81db9c1304fe)
+![Avgmed](https://github.com/user-attachments/assets/514e0b85-3dae-421f-b6d9-9bcad594da30)
 
 
 - Step 4: Measures for Average and Median Waitlist was created using the following DAX expressions 
@@ -135,7 +134,7 @@ Two card visuals were added to the report view to represent the Latest Month Wai
 
 - Step 6: A donut chart was also included in the report design to display the "Average/Median Wait list" by "Case Type" (Day Case, Inpatient, and Outpatient).
 
-![Screenshot 2024-08-12 110254](https://github.com/user-attachments/assets/b35d46a6-c176-48d5-a12d-cc9ca2c75cd3)
+![Screenshot 2024-08-12 110254](https://github.com/user-attachments/assets/86f37d4d-d042-405c-ba6b-022fc9cea263)
 
 
 - Step 7: A stacked column chart was also added to the report design area to show the relationship between "Time_Bands" and "Age_Profile".
@@ -146,32 +145,32 @@ Two card visuals were added to the report view to represent the Latest Month Wai
 
 Snap of the stacked column chart
 
-![Screenshot 2024-08-12 110307](https://github.com/user-attachments/assets/bfeea027-bd28-40b9-88bd-11b4cc5e4951)
+![Screenshot 2024-08-12 110307](https://github.com/user-attachments/assets/36d13403-8ad7-41e7-8824-3963b0b42333)
 
 
 - Step 10: A multi-row card was also added to the report design area. The card was configured with "Specialty_Name" and "Avg/Med Waitlist" as the measure. A filter was then applied by choosing "Top N" in the filter pane, setting it to display the top five specialties by entering "5" as the limit based on the "Avg/Med wait list" value.
 
-![Screenshot 2024-08-12 110403](https://github.com/user-attachments/assets/98cf9d73-b951-47af-a3ca-68671d754258)
+![Screenshot 2024-08-12 110403](https://github.com/user-attachments/assets/7aafcd72-d900-488a-9ae8-10f0fa2ae955)
 
 
 - Step 11: Two line charts were also included in the report design area (Summary page), each displaying the sum total for Case_Type over Archive_Date. One of the line charts was filtered to show only Day Case and Inpatient, while the other was filtered to display only Outpatient.
 
-![Screenshot 2024-08-12 110425](https://github.com/user-attachments/assets/268b8cc2-a073-4547-900c-99ae542679f4)
+![Screenshot 2024-08-12 110425](https://github.com/user-attachments/assets/ef78aca9-3554-40be-ad6c-9a55cfebfc90)
 
 
 - Step 12: Three visual filters (slicers) were also added to the report design area: one for Archive_Date, another for Case_Type, and the last for Specialty_Name. Both slicers for Case_Type and Specialty_Name were formatted to dropdown
 
-![Three visuals](https://github.com/user-attachments/assets/e4e70732-a2e1-491f-ba2e-779d0c1a1b13)
+![Three visuals](https://github.com/user-attachments/assets/f73d1fe5-d6bc-466a-b425-73133e3a680b)
 
 
 - Step 13. Another report page (Detail) was created for the visuals. On the detail report design area, five visual slicers were added for Archive_Date, Case_Type, Specialty_Name, Age_Profile and Time_Bands respectively.
 
-![Screenshot 2024-08-12 111103](https://github.com/user-attachments/assets/569aa64a-8182-4e95-b93a-e9fd33cfaee4)
+![Screenshot 2024-08-12 111103](https://github.com/user-attachments/assets/2d7f48bc-d744-4c14-bcf1-d3e3be35769a)
 
 
 - Step 14. A matrix visual was added to the detail report design area. Archive_Date, Specialty_Name, Age_Profile and Time_Bands were added to the rows of the visuals, Case_Type to the column and Total to the legend. 
 
-![Screenshot 2024-08-12 111207](https://github.com/user-attachments/assets/ebe4cedc-02d0-4b35-9567-dfb80540cf27)
+![Screenshot 2024-08-12 111207](https://github.com/user-attachments/assets/82a2c2b4-9ef6-4898-b4f1-117447a6ec79)
 
 
 - Step 15. To enhance the aesthetic appeal of the dashboard, we used https://stock.adobe.com/search?k=dashboard&search_type=recentsearch to find a dashboard background sample. We then utilized https://color.adobe.com/create/image to extract the themes and colors from the chosen sample. Afterward, the background was designed in PowerPoint and uploaded to Power BI. Next, formatting was applied to all visuals on both the summary and detail pages of the dashboard.
@@ -184,11 +183,11 @@ Snap of the stacked column chart
 
 A card visual for this dynamic title was then added to the report design area of the summary page.
 
-![Average](https://github.com/user-attachments/assets/96d661b8-6368-4f1f-8fc6-0bbef1ce915f) 
+![Average](https://github.com/user-attachments/assets/b9ca13be-deef-4a93-b112-92ace91eaf7c)
 
 and
 
-![Median](https://github.com/user-attachments/assets/b9af9438-1ed9-4e9e-aaa1-e66179e8c884)
+![Median](https://github.com/user-attachments/assets/5d4a5084-aeaf-4af5-ba9b-151c3d8af4fa)
 
 
 
@@ -206,38 +205,40 @@ and
 
 Snap of blank when Specialty_Name was filtered to Accident and Emergency
 
-![NoDataLeft](https://github.com/user-attachments/assets/da700d13-d315-49ab-9389-12ebd145ea94)
+![NoDataLeft](https://github.com/user-attachments/assets/0e0ba8d6-13fb-444d-880e-c184416d97f0)
 
 Snap of blank when Specialty_Name was filtered to Histopathology
 
-![NoDataRight](https://github.com/user-attachments/assets/fe3821c4-30d1-4b4a-9fdd-0b59b3a25299)
+![NoDataRight](https://github.com/user-attachments/assets/6d8b3962-81c4-4c96-a601-338d0e555be6)
 
 - Step 18. We added a page Navigation button for creating a link between the summary page and detail page by inserting buttons on both pages
 - Step 19. We incorporated a stacked bar chart and a visual card to design a custom tooltip, enhancing the dashboard's interactivity. 
 
 Snap of Interactive design when we hover the line charts
 
-![Screenshot 2024-08-12 112239](https://github.com/user-attachments/assets/7d5e19f0-b5e3-4f63-b8c0-8f3a8fe4c0c8)
+![Screenshot 2024-08-12 112239](https://github.com/user-attachments/assets/ad5b374a-7f9a-42f7-bbd3-2c12eed9acc1)
 
 
 ## Snapshot of Dashboard (Power BI Service)
 Summary Page
 
-![Screenshot 2024-08-12 115241](https://github.com/user-attachments/assets/86b37688-aaf3-442d-be11-50cbe6a7e757)
+![Screenshot 2024-08-12 115241](https://github.com/user-attachments/assets/814f9948-2502-4294-960e-2be207ba8c4a)
 
 Detail Page
 
-![Screenshot 2024-08-12 115436](https://github.com/user-attachments/assets/6f2d831e-15cb-42ab-b469-27a226f53e5d)
+![Screenshot 2024-08-12 115436](https://github.com/user-attachments/assets/bb1d342b-a8f6-4994-80d2-1645d2cda3e0)
+
 
 
 # Report Snapshot (Power BI DESKTOP)
 Summary View
 
-![Screenshot 2024-08-12 120141](https://github.com/user-attachments/assets/3826e67a-dab4-47bc-9b7b-9dd66153a032)
+![Screenshot 2024-08-12 120141](https://github.com/user-attachments/assets/0303f3ff-1745-41b6-ac42-b5ffcfc84aed)
 
 Detailed View
 
-![Screenshot 2024-08-12 120050](https://github.com/user-attachments/assets/e09a661f-a6de-475c-8b79-69b850dd6256)
+![Screenshot 2024-08-12 120050](https://github.com/user-attachments/assets/ed3cfc52-3801-42e8-808c-f304ee42772a)
+
 
 # Insights
 
